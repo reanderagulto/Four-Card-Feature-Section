@@ -8,7 +8,7 @@
     --grayish-blue: hsl(229, 6%, 66%);
     --light-gray: hsl(0, 0%, 98%);
 
-    --font-size: 0.9375rem;
+    --font-size: 15px;
     --font-poppins: 'Poppins', sans-serif;
 }
 
@@ -16,12 +16,139 @@ body{
     margin: unset;
     font-size: var(--font-size);
     font-family: var(--font-poppins);
+    background-color: var(--light-gray);
 }
 
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1.875rem 1.25rem;
+}
+
+.container {
+    padding: 0.625rem 1.25rem;
+    display: block;
+}
+
+    .container.top-banner {
+        text-align: center;
+    }
+
+        .top-banner h1 {
+            font-weight: 200;
+            font-size: 1.25rem;
+        }
+
+            .top-banner h1 strong {
+                display: block;
+            }
+
+
+.container.cards {
+    position: relative;
+}            
+
+    .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.625rem;
+        margin: 1.875rem 0;
+        padding: 1.875rem 0.9375rem;
+        box-shadow: 0rem 0.125rem 0.6875rem -0.25rem rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0rem 0.125rem 0.6875rem -0.25rem rgba(0,0,0,0.75);
+        min-height: 10.625rem;
+        -moz-box-shadow: 0rem 0.125rem 0.6875rem -0.25rem rgba(0,0,0,0.75);
+        border-top: 0.3125rem solid;
+    }
+        
+        .card:nth-of-type(1) {
+            border-top-color: var(--cyan);
+        }
+
+        .card:nth-of-type(2) {
+            border-top-color: var(--red);
+        }
+
+        .card:nth-of-type(3) {
+            border-top-color: var(--orange);
+        }
+
+        .card:nth-of-type(4) {
+            border-top-color: var(--blue);
+        }
+
+            .card div {
+                font-weight: 700;
+                font-size: 1.25rem;
+            }
+
+            .card img {
+                float: right;
+                margin-top: 0.9375rem;
+                margin-right: 0.9375rem;
+            }
+
+.top-banner h1, 
+.card div{
+    color: var(--dark-blue);
+}
 
 br.desktop {
     display: none;
 }
 
-.attribution { font-size: 11px; text-align: center; }
+p {
+    color: var(--grayish-blue);
+}
+
+.attribution { font-size: 0.6875rem; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width: 1024px) {
+
+    .top-banner h1{
+        font-size: 2rem;
+    }
+    br.desktop {
+        display: block;
+    }
+
+    br.mobile {
+        display: none;
+    }
+
+    .container.cards{
+        min-height: 40.625rem;
+        margin: auto;
+        max-width: 100%;
+        width: 64rem;
+        padding: unset;
+    }
+
+        .card{
+            width: 18.125rem;
+            position: absolute;
+        }
+
+        .card:nth-of-type(1) {
+            top: 30%;
+            left: 0;
+        }
+
+        .card:nth-of-type(2) {
+            left: 34.5%;
+            top: 9%;
+        }
+
+        .card:nth-of-type(3) {
+            left: 34.5%;
+            top: 50%;
+        }
+
+        .card:nth-of-type(4) {
+            top: 30%;
+            right: 0;
+        }
+}
